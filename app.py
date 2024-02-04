@@ -4,6 +4,16 @@ from scraper.scraper import Scraper
 app = Flask(__name__)
 scraper = Scraper()
 
+@app.route("/", methods=["GET"])
+def info_endpoints():
+    return {
+        "crypto-ranking": "Get the top 10 cryptocurrencies by market cap",
+        "exchange-ranking": "Get the top 10 exchanges by volume",
+        "dex-ranking": "Get the top 10 decentralized exchanges by volume",
+        "nft-collections": "Get the top 10 NFT collections",
+        "trending-cryptos": "Get the top 10 trending cryptocurrencies",
+        "gainers": "Get the top 10 gainers cryptocurrencies"
+    }
 
 @app.route("/crypto-ranking", methods=["GET"])
 def get_ranking():
