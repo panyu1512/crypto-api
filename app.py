@@ -1,5 +1,5 @@
 from flask import Flask
-from scraper import Scraper
+from scraper.scraper import Scraper
 
 app = Flask(__name__)
 scraper = Scraper()

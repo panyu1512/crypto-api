@@ -1,7 +1,7 @@
 import json
 import pandas as pd
 
-from utils import obtain_crypto_abbreviation
+from scraper.utils import obtain_crypto_abbreviation
 
 class Scraper:
     """
@@ -16,7 +16,6 @@ class Scraper:
             "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
         }
         self.baseurl = "https://www.coinmarketcap.com/"
-        
 
     def _abbreviate_crypto_names(self, df):
         df['Name'] = df['Name'].apply(lambda x: obtain_crypto_abbreviation(x))
