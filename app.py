@@ -4,7 +4,7 @@ from scraper.scraper import Scraper
 app = Flask(__name__)
 scraper = Scraper()
 
-@app.route("/", methods=["GET"])
+@app.route("/api", methods=["GET"])
 def info_endpoints():
     return {
         "crypto-ranking": "Get the top 10 cryptocurrencies by market cap",
@@ -15,27 +15,27 @@ def info_endpoints():
         "gainers": "Get the top 10 gainers cryptocurrencies"
     }
 
-@app.route("/crypto-ranking", methods=["GET"])
+@app.route("/api/crypto-ranking", methods=["GET"])
 def get_ranking():
     return scraper.get_top_10_crypto_by_market_cap()
 
-@app.route("/exchange-ranking", methods=["GET"])
+@app.route("/api/exchange-ranking", methods=["GET"])
 def get_exchanges():
     return scraper.get_top_10_exchanges()
 
-@app.route("/dex-ranking", methods=["GET"])
+@app.route("/api/dex-ranking", methods=["GET"])
 def get_dex():
     return scraper.get_top_10_descentralized_exchanges()
 
-@app.route("/nft-collections", methods=["GET"])
+@app.route("/api/nft-collections", methods=["GET"])
 def get_nft():
     return scraper.get_nft_top_10_collections()
 
-@app.route("/trending-cryptos", methods=["GET"])
+@app.route("/api/trending-cryptos", methods=["GET"])
 def get_trending():
     return scraper.get_top_10_trending_coins()
 
-@app.route("/gainers", methods=["GET"])
+@app.route("/api/gainers", methods=["GET"])
 def get_gainers():
     return scraper.get_top_10_gainers()
 
