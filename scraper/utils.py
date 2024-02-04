@@ -1,5 +1,5 @@
 
-def obtain_crypto_abbreviation(crypto_name: str) -> str:
+def get_crypto_abbreviation(crypto_name: str) -> str:
     """
     Obtain the abbreviation of the cryptocurrencie
     returns: str
