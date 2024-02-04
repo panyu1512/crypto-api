@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "==0.109.0"
+uvicorn = "==0.27.0"
+bs4 = "==0.0.2"
+requests = "==2.26.0"
+pandas = "==2.2.0"
+lxml = "==5.1.0"
+html5lib = "==1.1"
+numpy = "==1.23.5"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
