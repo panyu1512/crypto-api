@@ -8,6 +8,7 @@ fastapi = "==0.109.0"
 gunicorn = "==21.2.0"
 pandas = "==2.2.0"
 flask = "==3.0.2"
+lxml = "==5.1.0"
 
 [dev-packages]
 
