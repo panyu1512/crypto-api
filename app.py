@@ -1,8 +1,17 @@
 from flask import Flask
 from scraper.scraper import Scraper
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 
 app = Flask(__name__)
 scraper = Scraper()
+
+limiter = Limiter(
+    get_remote_address,
+    app=app,
+    default_limits=["2 per minute", "1 per second"],
+    strategy="fixed-window"
+)
 
 @app.route("/api", methods=["GET"])
 def info_endpoints():
